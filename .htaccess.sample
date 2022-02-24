@@ -1,0 +1,8 @@
+deny from all
+allow from 192.168.0.2
+AuthType Basic
+AuthUserFile /usr/local/adm-httpd/conf/htpasswd.users
+AuthName "special directory"
+require valid-user
+satisfy any
+

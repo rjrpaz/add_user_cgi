@@ -1,0 +1,72 @@
+<HEAD><TITLE>Form to create email addresses</TITLE></HEAD>
+<!--#include virtual="/cgi-bin/cgiwrap"-->
+<HTML><BODY bgcolor="#C0C0C0" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+<center><table border=2 width=100%%>
+<tr><td align=center width=100%><hr size=0 width=0><FONT size=+2><b>Form to create email addresses</b></FONT><hr size=0 width=0></th></tr></table></center>
+<CENTER><H2>Please, fill the requested information</H2></CENTER>
+<FORM METHOD="POST" ACTION="https://127.0.0.1/cgi-bin/adduser.pl">
+
+
+
+<HR>
+<H2>General Info</H2>
+<BR>
+
+
+<pre>
+<b>Real bane:             </b><INPUT type="text" name="name" value="" size=35>
+                       Insert name of the user (ex: John Smith)
+                       or "Delete"
+<BR>
+
+<b>Password: </b><INPUT type="password" name="password" value="" size=35>
+		       	Password should has between <B>5</B> to <B>8</B> chars long. 
+			If it exceeds 8 chars it will be truncated.<BR>
+                       (Password is personal and should not be shared)
+
+<b>Password (again):         </b><INPUT type="password" name="password_conf" value="" size=35>
+<BR>
+<BR>
+
+<pre>
+<b>Email address: </b>(ex: jsmith@midomain.org)
+<CENTER>
+<INPUT TYPE="text" NAME="username" SIZE=8 VALUE=""><B> @midomain.org</B>
+
+<BR>
+</CENTER>
+</pre>
+
+Please select shell to be used: <SELECT NAME="shell" SIZE=1>
+						  <OPTION SELECTED>Bourne-Again Shell
+						  <OPTION>Extended C Shell
+						  <OPTION>Z Shell
+						  <OPTION>A Shell
+						  </SELECT>
+<HR>
+
+<PRE>
+<b>Finger information: </b>
+<TEXTAREA NAME="finger" ROWS=3 COLS=58>
+Department - Unit
+City - Country
+</TEXTAREA>
+(Please insert info that you want to be known when requested by <B>finger</B>>)
+</pre>
+
+<HR>
+<H2>Local management for the info</H2>
+<P>
+<BR>
+<UL>
+<LI><code><strong>Please specific any address to forward email (if required)</strong></code>
+<BR>
+<TEXTAREA NAME="forward" ROWS=3 COLS=51></TEXTAREA></UL>
+
+
+<HR>
+<center><table border=2 width=100%%><tr><td width=33%% align=center><input type=submit value="   OK   "></td>
+<td width=34%% align=center><input type=reset value=" Reset "></td>
+<td width=33% align=center><input type=button value="  Help  " onclick="var hwin=window.open('', 'infowin_mail', 'resizable=1,width=400,height=500');if(top.helpwin==1)     hwin.frames[1].location='http://server.midomain.org:5628/mail-mailserv/bin/tutor?!Account';else  {    hwin.location='http://server.midomain.org:5628/mail-mailserv/bin/tutor?Account';    hwin.rwin=top;     hwin.rwin.helpwin=1; }"></td>
+</tr></table></center>
+</form>
